@@ -1,9 +1,8 @@
-// This function runs when a user completes a task
+
 function logCompletion(element, taskTitle) {
-    // Get the activity log container from the HTML
     const activityLog = document.getElementById('activity-log');
     
-    // Create current time and add 6 hours for UTC+6 timezone
+   
     const currentTime = new Date();
     const utc6Time = new Date(currentTime.getTime() + 6 * 60 * 60 * 1000);
     
@@ -60,7 +59,6 @@ function logCompletion(element, taskTitle) {
   
   // Changes background color to a random color
   function changeBackgroundColor() {
-    // Generate random RGB values (0-255 for each color channel)
     const red = Math.floor(Math.random() * 256);
     const green = Math.floor(Math.random() * 256);
     const blue = Math.floor(Math.random() * 256);
@@ -91,6 +89,5 @@ function logCompletion(element, taskTitle) {
   // When page loads: set initial date and update daily
   window.onload = function() {
     updateCurrentDate(); // Set initial date
-    // Update date every 24 hours (in milliseconds)
     setInterval(updateCurrentDate, 24 * 60 * 60 * 1000);
   };
