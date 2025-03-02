@@ -17,9 +17,9 @@
   font-style: normal;
 }
 </style>
-
+ 
 <body class="bg-blue-50 poppins-font">
-  <div class="max-w-7xl mx-auto p-4">
+  <div class="max-w-7xl mx-auto py-4 px-4 lg:px-[40px]">
     <!-- Header -->
     <nav class="flex justify-between items-center bg-white p-4 rounded-lg shadow-md">
       <div class="flex items-center space-x-2">
@@ -29,11 +29,12 @@
         <h1 class="text-2xl font-light text-gray-800">Dev<span class="font-semibold">Board</span></h1>
       </div>
       <div class="flex items-center space-x-4">
-        <div class="flex items-center gap-2 space-x-1">
-          <img src="assets/checkbox.png"  width="26px"
-          height="26px" alt="">
+
+        <div class="flex items-center gap-2 bg-[#F4F7FF] rounded-[24px] px-[20px] py-[10px]">
+          <img src="assets/checkbox.png" alt="" class="h-[24px] w-[24px]">
           <span id="task-count" class="text-2xl font-bold text-gray-800">23</span>
         </div>
+
         <button class="bg-[#F4F7FF] p-2 rounded-full" onclick="changeBackgroundColor()">
           <img src="assets/theme-btn.png" height="32px" width="32px" alt="">
 
@@ -41,7 +42,7 @@
       </div>
     </nav>
     
-    <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 mt-4">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 mt-4 ">
       <!--(Big Card) -->
       <div class="col-span-3">
         <div class="bg-white p-4 rounded-lg shadow-md">
@@ -57,7 +58,7 @@
                 </div>
                 <div class="flex flex-col ">
                   <span class="text-md font-semibold text-gray-800">Task Assigned</span>
-                <span id="task-assigned" class="text-[28px] font-bold text-blue-500">6</span>
+                <span id="task-assigned" class="text-[28px] font-bold text-slate-900">6</span>
                 </div>
               </div>
             </div>

@@ -6,29 +6,29 @@ function logCompletion(element, taskTitle) {
     const currentTime = new Date();
     const utc6Time = new Date(currentTime.getTime() + 6 * 60 * 60 * 1000);
     
-    // Format the time in 12-hour format with AM/PM
+    //time in 12-hour format with AM/PM
     const hours = utc6Time.getUTCHours();
     const minutes = utc6Time.getUTCMinutes().toString().padStart(2, '0');
     const seconds = utc6Time.getUTCSeconds().toString().padStart(2, '0');
     const ampm = hours >= 12 ? 'PM' : 'AM';
     const formattedTime = `${hours % 12 || 12}:${minutes}:${seconds} ${ampm}`;
   
-    // Create a new log message
+    // Creating a new log message
     const logMessage = `You have completed ${taskTitle} at ${formattedTime}`;
     
-    // Create a new div element for the log entry
+    // div element for the log entry
     const logEntry = document.createElement('div');
     logEntry.className = 'bg-blue-100 p-2 rounded-lg';
     logEntry.innerHTML = `<span class="text-gray-800">${logMessage}</span>`;
     
-    // Add the new log entry to the activity log
+    // new log entry to the activity log
     activityLog.appendChild(logEntry);
   
     // Update task counters
     const taskAssigned = document.getElementById('task-assigned');
     let taskCount = parseInt(taskAssigned.textContent);
     
-    // Decrease remaining tasks count (never go below 0)
+    // Decrease remaining tasks count
     if (taskCount > 0) {
       taskAssigned.textContent = taskCount - 1;
     }
@@ -40,7 +40,7 @@ function logCompletion(element, taskTitle) {
     // Show success message
     alert("Board Updated Successfully");
   
-    // Disable the completed button and make it look inactive
+    // Disable the completed button
     element.onclick = null; // Remove click handler
     element.classList.remove('text-white', 'bg-blue-500', 'cursor-pointer');
     element.classList.add('bg-blue-500', 'opacity-20');
